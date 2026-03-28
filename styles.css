@@ -846,6 +846,20 @@ a { color: inherit; text-decoration: none; }
     justify-content: center;
   }
 
+  .nav {
+    padding: 8px 14px;
+  }
+
+  .nav-logo img {
+    height: 26px;
+  }
+
+  .nav-button {
+    padding: 6px 12px;
+    font-size: 13px;
+    font-weight: 500;
+  }
+
   .brand img { width: 112px; }
 
   .hero-proof { grid-template-columns: 1fr; }
