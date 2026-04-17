@@ -392,6 +392,286 @@ em { font-style: italic; }
   50% { opacity: 0.6; transform: scale(0.8); }
 }
 
+/* ---- METHOD yv  ---- */
+/* ---- POR QUE A YV FUNCIONA ---- */
+.yv-why-section {
+  position: relative;
+  overflow: hidden;
+  padding: 96px 0;
+  background:
+    radial-gradient(circle at 85% 88%, rgba(255, 140, 60, 0.34), transparent 30%),
+    radial-gradient(circle at 78% 18%, rgba(168, 85, 247, 0.18), transparent 24%),
+    linear-gradient(135deg, #1b0b4f 0%, #2a0d6d 42%, #3a136f 68%, #6b2b4c 100%);
+  color: #f7f2ee;
+}
+
+.yv-why-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(255,255,255,0.08) 0.8px, transparent 0.8px);
+  background-size: 18px 18px;
+  opacity: 0.18;
+  pointer-events: none;
+}
+
+.yv-why-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(to right, rgba(9, 3, 30, 0.14), rgba(9, 3, 30, 0.03)),
+    linear-gradient(to bottom, rgba(255,255,255,0.02), rgba(255,255,255,0));
+  pointer-events: none;
+}
+
+.yv-why-shell {
+  position: relative;
+  z-index: 2;
+}
+
+.yv-why-top {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(320px, 0.85fr);
+  gap: 28px;
+  align-items: start;
+  margin-bottom: 28px;
+}
+
+.yv-why-left {
+  max-width: 720px;
+}
+
+.yv-why-kicker {
+  display: inline-block;
+  margin-bottom: 18px;
+  font-size: 0.78rem;
+  letter-spacing: 0.22em;
+  font-weight: 700;
+  color: #f0a35b;
+}
+
+.yv-why-title {
+  margin: 0 0 24px;
+  font-family: "Playfair Display", serif;
+  font-size: clamp(2.4rem, 5vw, 4.3rem);
+  line-height: 0.95;
+  letter-spacing: -0.03em;
+  color: #fff8f2;
+  max-width: 680px;
+}
+
+.yv-why-intro p {
+  margin: 0 0 14px;
+  font-size: 1.04rem;
+  line-height: 1.75;
+  color: rgba(247, 242, 238, 0.9);
+}
+
+.yv-why-quote {
+  padding: 28px 24px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 24px;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 18px 46px rgba(10, 4, 31, 0.2);
+  align-self: start;
+}
+
+.yv-card-label {
+  display: inline-block;
+  margin-bottom: 14px;
+  font-size: 0.8rem;
+  letter-spacing: 0.14em;
+  font-weight: 700;
+  color: #efe1ff;
+}
+
+.yv-why-quote p {
+  margin: 0;
+  font-size: 1.08rem;
+  line-height: 1.7;
+  font-style: italic;
+  color: rgba(255, 248, 242, 0.95);
+}
+
+.yv-why-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  align-items: stretch;
+}
+
+.yv-step,
+.yv-info-card {
+  min-height: 100%;
+}
+
+.yv-step {
+  padding: 24px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 22px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 16px 40px rgba(14, 6, 45, 0.18);
+}
+
+.yv-step h3 {
+  margin: 0 0 10px;
+  font-size: 1.16rem;
+  font-weight: 700;
+  color: #fff6f0;
+}
+
+.yv-step p {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.7;
+  color: rgba(247, 242, 238, 0.84);
+}
+
+.yv-info-card {
+  display: grid;
+  grid-template-columns: 54px 1fr;
+  gap: 16px;
+  align-items: start;
+  padding: 24px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 22px;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 18px 46px rgba(10, 4, 31, 0.2);
+}
+
+.yv-card-icon {
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-size: 1.25rem;
+  background: linear-gradient(135deg, #f08b3e 0%, #6f2dbd 100%);
+  box-shadow: 0 10px 26px rgba(240, 139, 62, 0.22);
+}
+
+.yv-info-card h4 {
+  margin: 0 0 8px;
+  font-size: 1.08rem;
+  line-height: 1.35;
+  color: #fff7f3;
+}
+
+.yv-info-card p {
+  margin: 0;
+  font-size: 0.96rem;
+  line-height: 1.65;
+  color: rgba(247, 242, 238, 0.78);
+}
+
+.yv-why-final {
+  max-width: 520px;
+  margin-top: 30px;
+}
+
+.yv-why-final p {
+  margin: 0 0 6px;
+  font-size: 1.02rem;
+  line-height: 1.7;
+  color: rgba(247, 242, 238, 0.9);
+}
+
+.yv-why-highlight {
+  margin-top: 14px !important;
+  font-weight: 700;
+  color: #ffcf9e !important;
+}
+
+@media (max-width: 1080px) {
+  .yv-why-top {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+
+  .yv-why-left,
+  .yv-why-title,
+  .yv-why-final {
+    max-width: 100%;
+  }
+
+  .yv-why-quote {
+    max-width: 760px;
+  }
+
+  .yv-why-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 760px) {
+  .yv-why-section {
+    padding: 72px 0;
+  }
+
+  .yv-why-title {
+    font-size: clamp(2.1rem, 11vw, 3rem);
+    line-height: 0.98;
+  }
+
+  .yv-why-intro p,
+  .yv-step p,
+  .yv-why-final p,
+  .yv-why-quote p {
+    font-size: 1rem;
+    line-height: 1.65;
+  }
+
+  .yv-why-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .yv-step,
+  .yv-info-card,
+  .yv-why-quote {
+    border-radius: 18px;
+  }
+
+  .yv-info-card {
+    grid-template-columns: 46px 1fr;
+    padding: 20px;
+  }
+
+  .yv-card-icon {
+    width: 46px;
+    height: 46px;
+    font-size: 1.08rem;
+  }
+
+ .yv-why-closing {
+  margin-top: 60px;
+  text-align: center;
+}
+
+.yv-closing-main {
+  font-size: 1.1rem;
+  color: rgba(247,242,238,0.85);
+  margin-bottom: 10px;
+}
+
+.yv-closing-sub {
+  font-size: 0.95rem;
+  color: rgba(247,242,238,0.6);
+  margin-bottom: 14px;
+  letter-spacing: 0.02em;
+}
+
+.yv-closing-highlight {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #ffcf9e;
+}
+}
+/* ---- METHOD yv  ---- */
+
+
 /* ---- METHOD ---- */
 .method {
   background: linear-gradient(180deg, rgba(232,221,208,0.5) 0%, transparent 100%);
