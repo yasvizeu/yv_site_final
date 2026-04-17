@@ -38,6 +38,9 @@ body {
   background-attachment: fixed;
 }
 
+html, body {
+  overflow-x: hidden;
+}
 /* subtle grain overlay */
 body::before {
   content: "";
@@ -1322,4 +1325,11 @@ em { font-style: italic; }
 
   .brand img { width: 68px; }
   .btn-nav { padding: 8px 14px; font-size: 0.82rem; }
+}
+
+@media (max-width: 760px) {
+  .method-grid,
+  .routine-grid {
+    grid-template-columns: 1fr;
+  }
 }
