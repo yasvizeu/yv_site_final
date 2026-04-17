@@ -1,3 +1,4 @@
+// Reveal on scroll
 const observer = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
     if (entry.isIntersecting) {
@@ -5,8 +6,22 @@ const observer = new IntersectionObserver((entries) => {
       observer.unobserve(entry.target);
     }
   });
-}, {
-  threshold: 0.15,
-});
+}, { threshold: 0.12 });
 
 document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+
+// Currency toggle
+const toggleBtns = document.querySelectorAll('.toggle-btn');
+const prices = document.querySelectorAll('.plan-price');
+
+toggleBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    toggleBtns.forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+
+    const currency = btn.dataset.currency;
+    prices.forEach(price => {
+      price.textContent = price.dataset[currency];
+    });
+  });
+});
