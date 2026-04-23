@@ -569,6 +569,38 @@ h1 em, h2 em {
   width: 100%;
 }
 
+/* ---- WHATSAPP FLUTUANTE ---- */
+.whatsapp-float {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 13px 20px 13px 16px;
+  background: #25D366;
+  color: #fff;
+  border-radius: 999px;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 800;
+  font-size: 0.9rem;
+  box-shadow: 0 8px 28px rgba(37, 211, 102, 0.38);
+  transition: transform 0.2s, box-shadow 0.2s;
+  text-decoration: none;
+  max-width: calc(100vw - 48px);
+}
+.whatsapp-float:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 36px rgba(37, 211, 102, 0.48);
+}
+.whatsapp-float svg { flex-shrink: 0; }
+
+@media (max-width: 480px) {
+  .whatsapp-float span { display: none; }
+  .whatsapp-float { padding: 14px; border-radius: 50%; }
+}
+
 /* ---- FOOTER ---- */
 .site-footer { border-top: 1px solid var(--line); padding: 28px 0 36px; }
 .footer-inner { display: flex; flex-direction: column; align-items: center; gap: 16px; text-align: center; }
@@ -583,6 +615,127 @@ h1 em, h2 em {
 /* ---- REVEAL ---- */
 .reveal { opacity: 0; transform: translateY(22px); transition: opacity 0.65s ease, transform 0.65s ease; }
 .reveal.visible { opacity: 1; transform: translateY(0); }
+
+/* ---- INSTAGRAM ---- */
+.instagram-section { background: var(--beige-2); }
+.blob-insta { width: 380px; height: 380px; top: 0; left: -80px; background: radial-gradient(circle, rgba(107,63,160,0.10), transparent 70%); }
+
+.insta-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin-bottom: 32px;
+}
+
+.insta-card {
+  border-radius: var(--r);
+  min-height: 160px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+}
+
+.insta-card-1 { background: linear-gradient(145deg, #1e0e3e, #3d1f78); }
+.insta-card-2 { background: linear-gradient(145deg, #c4601a, #e08040); }
+.insta-card-3 { background: linear-gradient(145deg, #3d1f78, #9b6bc7); }
+.insta-card-4 { background: linear-gradient(145deg, #2a1a0a, #c4601a); }
+
+.insta-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(255,255,255,0.04) 1px, transparent 1px);
+  background-size: 18px 18px;
+}
+
+.insta-card-inner {
+  position: relative;
+  z-index: 1;
+  padding: 16px;
+}
+
+.insta-tag {
+  display: inline-block;
+  padding: 3px 10px;
+  background: rgba(255,255,255,0.18);
+  border: 1px solid rgba(255,255,255,0.22);
+  border-radius: 999px;
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.9);
+  margin-bottom: 8px;
+}
+
+.insta-card-inner p {
+  color: rgba(255,255,255,0.88);
+  font-size: 0.88rem;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.insta-card-inner em { color: #fff; font-style: italic; }
+
+.insta-cta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  text-align: center;
+}
+
+.btn-insta {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 28px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045);
+  color: #fff;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 800;
+  font-size: 0.88rem;
+  letter-spacing: 0.06em;
+  box-shadow: 0 10px 28px rgba(131,58,180,0.30);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.btn-insta:hover { transform: translateY(-2px); box-shadow: 0 14px 32px rgba(131,58,180,0.38); }
+
+.insta-cta p { color: var(--muted); font-size: 0.88rem; }
+
+/* ---- WHATSAPP FLUTUANTE ---- */
+.whatsapp-float {
+  position: fixed;
+  bottom: 24px;
+  right: 20px;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 13px 20px;
+  background: #25d366;
+  color: #fff;
+  border-radius: 999px;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 800;
+  font-size: 0.88rem;
+  box-shadow: 0 8px 28px rgba(37,211,102,0.38);
+  transition: transform 0.2s, box-shadow 0.2s;
+  max-width: calc(100vw - 40px);
+}
+.whatsapp-float:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 32px rgba(37,211,102,0.46);
+}
+.whatsapp-float svg { flex-shrink: 0; }
+.wa-label { white-space: nowrap; }
+
+@media (max-width: 480px) {
+  .wa-label { display: none; }
+  .whatsapp-float { padding: 14px; border-radius: 50%; }
+}
 
 /* ============================================================
    TABLET — 640px+
@@ -622,6 +775,8 @@ h1 em, h2 em {
   .cert-box { flex-direction: row; align-items: center; }
   .cert-img { transform: rotate(-2deg); flex-shrink: 0; max-width: 340px; }
   .about-grid { flex-direction: row; align-items: flex-end; gap: 52px; }
+  .insta-grid { grid-template-columns: repeat(4, 1fr); }
+  .insta-card { min-height: 200px; }
   .about-panel { max-width: 360px; }
   .footer-inner { flex-direction: row; justify-content: space-between; text-align: left; }
 }
