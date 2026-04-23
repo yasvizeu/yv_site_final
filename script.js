@@ -6,7 +6,7 @@ const observer = new IntersectionObserver((entries) => {
       observer.unobserve(entry.target);
     }
   });
-}, { threshold: 0.12 });
+}, { threshold: 0.10 });
 
 document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
 
@@ -18,7 +18,6 @@ toggleBtns.forEach(btn => {
   btn.addEventListener('click', () => {
     toggleBtns.forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
-
     const currency = btn.dataset.currency;
     prices.forEach(price => {
       price.textContent = price.dataset[currency];
