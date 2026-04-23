@@ -629,54 +629,70 @@ h1 em, h2 em {
 
 .insta-card {
   border-radius: var(--r);
-  min-height: 160px;
-  position: relative;
   overflow: hidden;
-  display: flex;
-  align-items: flex-end;
+  aspect-ratio: 3/4;
+  position: relative;
+  box-shadow: 0 12px 32px rgba(0,0,0,0.14);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  cursor: pointer;
 }
 
-.insta-card-1 { background: linear-gradient(145deg, #1e0e3e, #3d1f78); }
-.insta-card-2 { background: linear-gradient(145deg, #c4601a, #e08040); }
-.insta-card-3 { background: linear-gradient(145deg, #3d1f78, #9b6bc7); }
-.insta-card-4 { background: linear-gradient(145deg, #2a1a0a, #c4601a); }
+.insta-card:hover { transform: translateY(-4px); box-shadow: 0 20px 40px rgba(0,0,0,0.20); }
 
-.insta-card::before {
-  content: "";
+.insta-card img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+.insta-card:hover img { transform: scale(1.04); }
+
+.insta-overlay {
   position: absolute;
   inset: 0;
-  background-image: radial-gradient(rgba(255,255,255,0.04) 1px, transparent 1px);
-  background-size: 18px 18px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 16px;
 }
 
-.insta-card-inner {
-  position: relative;
-  z-index: 1;
-  padding: 16px;
+.insta-card:nth-child(1) .insta-overlay {
+  background: linear-gradient(to top, rgba(74,20,140,0.95) 0%, rgba(74,20,140,0.55) 45%, transparent 100%);
+}
+.insta-card:nth-child(2) .insta-overlay {
+  background: linear-gradient(to top, rgba(196,96,26,0.95) 0%, rgba(196,96,26,0.55) 45%, transparent 100%);
+}
+.insta-card:nth-child(3) .insta-overlay {
+  background: linear-gradient(to top, rgba(74,20,140,0.95) 0%, rgba(74,20,140,0.55) 45%, transparent 100%);
+}
+.insta-card:nth-child(4) .insta-overlay {
+  background: linear-gradient(to top, rgba(196,96,26,0.95) 0%, rgba(196,96,26,0.55) 45%, transparent 100%);
 }
 
 .insta-tag {
   display: inline-block;
-  padding: 3px 10px;
-  background: rgba(255,255,255,0.18);
-  border: 1px solid rgba(255,255,255,0.22);
+  padding: 4px 12px;
   border-radius: 999px;
-  font-size: 0.7rem;
+  font-size: 0.68rem;
   font-weight: 800;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: rgba(255,255,255,0.9);
-  margin-bottom: 8px;
+  color: #fff;
+  margin-bottom: 10px;
+  align-self: flex-start;
 }
+.insta-card:nth-child(1) .insta-tag { background: rgba(107,63,160,0.9); }
+.insta-card:nth-child(2) .insta-tag { background: rgba(196,96,26,0.9); }
+.insta-card:nth-child(3) .insta-tag { background: rgba(107,63,160,0.9); }
+.insta-card:nth-child(4) .insta-tag { background: rgba(196,96,26,0.9); }
 
-.insta-card-inner p {
+.insta-overlay p {
   color: rgba(255,255,255,0.88);
-  font-size: 0.88rem;
-  line-height: 1.5;
+  font-size: 0.84rem;
+  line-height: 1.45;
   margin: 0;
 }
-
-.insta-card-inner em { color: #fff; font-style: italic; }
+.insta-overlay em { color: #fff; font-style: italic; }
 
 .insta-cta {
   display: flex;
@@ -775,8 +791,7 @@ h1 em, h2 em {
   .cert-box { flex-direction: row; align-items: center; }
   .cert-img { transform: rotate(-2deg); flex-shrink: 0; max-width: 340px; }
   .about-grid { flex-direction: row; align-items: flex-end; gap: 52px; }
-  .insta-grid { grid-template-columns: repeat(4, 1fr); }
-  .insta-card { min-height: 200px; }
+  .insta-grid { grid-template-columns: repeat(4, 1fr); gap: 16px; }
   .about-panel { max-width: 360px; }
   .footer-inner { flex-direction: row; justify-content: space-between; text-align: left; }
 }
